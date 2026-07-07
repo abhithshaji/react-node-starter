@@ -1,0 +1,23 @@
+# --- Package Managers & Dependencies ---
+node_modules/
+.pnpm-store/
+
+# --- Build & Output Directories ---
+dist/
+build/
+out/
+.next/
+.nuxt/
+
+# --- Test Coverage ---
+coverage/
+
+# --- Hidden System & IDE Folders ---
+.vscode/
+.idea/
+.github/
+.husky/
+
+# --- Specific Non-Style Files to Skip ---
+README.md
+CHANGELOG.md

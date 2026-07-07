@@ -1,0 +1,50 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "lint:eslint-check": "eslint",
+    "lint:eslint-fix": "eslint --fix",
+    "prisma:generate": "pnpm dlx prisma generate",
+    "dist": "pnpm exec tsc && pnpm exec tsc-alias",
+    "dev": "cross-env NODE_ENV=development nodemon src/server.ts",
+    "start": "cross-env NODE_ENV=production node dist/src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.13.2",
+    "@types/pg": "^8.20.0",
+    "@types/source-map-support": "^0.5.10",
+    "cross-env": "^10.1.0",
+    "eslint": "^10.6.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.7.0",
+    "nodemon": "^3.1.14",
+    "prisma": "^7.8.0",
+    "tsc-alias": "^1.9.0",
+    "tsx": "^4.22.5",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.62.1"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.8.0",
+    "@prisma/client": "^7.8.0",
+    "colorette": "^2.0.20",
+    "cors": "^2.8.6",
+    "dotenv-flow": "^4.1.0",
+    "express": "^5.2.1",
+    "helmet": "^8.2.0",
+    "pg": "^8.22.0",
+    "rate-limiter-flexible": "^11.2.0",
+    "source-map-support": "^0.5.21",
+    "winston": "^3.19.0",
+    "winston-mongodb": "^7.0.1"
+  }
+}

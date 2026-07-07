@@ -1,0 +1,22 @@
+{
+  "name": "vite-node-starter",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "format:check": "pnpm prettier --check .",
+    "format:fix": "pnpm prettier --write .",
+    "dev:client": "pnpm --filter client dev",
+    "dev:server": "pnpm --filter server dev",
+    "dev": "pnpm --parallel dev",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.0",
+    "@commitlint/config-conventional": "^21.2.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.8",
+    "prettier": "3.9.4",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}

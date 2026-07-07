@@ -1,0 +1,54 @@
+# --- Package Managers ---
+node_modules/
+pnpm-lock.yaml
+pnpm-workspace.yaml
+package-lock.json
+yarn.lock
+.pnpm-store/
+
+# --- Build & Output Directories ---
+dist/
+build/
+out/
+lib/
+.next/
+.nuxt/
+generated/
+
+# --- Logs, Diagnostics & Coverage ---
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+coverage/
+.nyc_output/
+
+# --- Environment & Secret Files ---
+.env
+.env.*
+*.pem
+*.key
+
+# --- Configuration & Tooling ---
+.husky/
+.github/
+.vscode/
+.idea/
+.eslintcache
+.stylelintignore
+.gitignore
+
+# --- Documentation & Media ---
+README.md
+CHANGELOG.md
+LICENSE
+*.mp4
+*.mp3
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.gif
+*.ico
