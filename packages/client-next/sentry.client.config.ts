@@ -10,5 +10,5 @@ Sentry.init({
   tracesSampleRate: 1.0,
 
   // Setting this option to true will print useful information to the console while debugging.
-  debug: false,
+  debug: false
 });

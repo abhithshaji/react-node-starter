@@ -14,16 +14,14 @@ const validateEnv = (env: Record<string, string | undefined>): AppEnv => {
 
   for (const key of requiredVars) {
     if (!env[key]) {
-      throw new Error(
-        `❌ Missing required environment variable: ${key}`
-      );
+      throw new Error(`❌ Missing required environment variable: ${key}`);
     }
   }
 
   return {
     NEXT_PUBLIC_ENV: env.NEXT_PUBLIC_ENV as TMode,
     NEXT_PUBLIC_SENTRY_DSN: env.NEXT_PUBLIC_SENTRY_DSN,
-    SENTRY_AUTH_TOKEN: env.SENTRY_AUTH_TOKEN,
+    SENTRY_AUTH_TOKEN: env.SENTRY_AUTH_TOKEN
   };
 };
 
@@ -31,7 +29,7 @@ const validateEnv = (env: Record<string, string | undefined>): AppEnv => {
 validateEnv(process.env);
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: true
   /* other Next.js config options here */
 };
 
@@ -52,14 +50,14 @@ const sentryOptions = {
   // Automatically annotate React components to show in Sentry breadcrumbs
   webpack: {
     reactComponentAnnotation: {
-      enabled: true,
-    },
+      enabled: true
+    }
   },
 
   // Hides source maps from visitors in production browser bundles
   sourcemaps: {
-    deleteSourcemapsAfterUpload: true,
-  },
+    deleteSourcemapsAfterUpload: true
+  }
 };
 
 export default withSentryConfig(nextConfig, sentryOptions);

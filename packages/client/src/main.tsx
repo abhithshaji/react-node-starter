@@ -11,7 +11,7 @@ Sentry.init({
     // userInfo: false,
     // httpBodies: []
   },
-  enabled: import.meta.env.VITE_ENV === "production",
+  enabled: import.meta.env.VITE_ENV === "production"
 });
 
 createRoot(document.getElementById("root")!).render(
@@ -19,5 +19,5 @@ createRoot(document.getElementById("root")!).render(
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 );
