@@ -5,8 +5,8 @@
   "scripts": {
     "lint:eslint-check": "eslint",
     "lint:eslint-fix": "eslint --fix",
-    "lint:stylelint-check": "stylelint **/*.css",
-    "lint:stylelint-fix": "stylelint **/*.css --fix",
+    "lint:stylelint-check": "stylelint \"src/**/*.css\" --allow-empty-input",
+    "lint:stylelint-fix": "stylelint \"src/**/*.css\" --fix --allow-empty-input",
     "dev": "dotenv -e .env.development -- sh -c 'next dev -p $CLIENT_PORT --turbopack'",
     "test:unit": "dotenv -e .env.testing -- vitest run",
     "test:coverage": "dotenv -e .env.testing -- vitest run --coverage",
