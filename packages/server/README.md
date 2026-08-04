@@ -1,6 +1,6 @@
-# Vite-Node Starter Template - Server
+# React-Node Starter Template - Server
 
-This is the backend server for the Vite-Node Starter Template.
+This is the backend server for the React-Node Starter Template.
 
 ## Table of Contents
 

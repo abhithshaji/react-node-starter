@@ -1,6 +1,6 @@
-# Vite-Node Starter Template - Client-Vite
+# React-Node Starter Template - Client-Vite
 
-This is the client-side application for the Vite-Node Starter Template.
+This is the client-side application for the React-Node Starter Template.
 
 ## Table of Contents
 
@@ -18,7 +18,7 @@ This is the client-side application for the Vite-Node Starter Template.
 
 ## Introduction
 
-The client application is the user-facing interface for the Vite-Node Starter Template. It is built using React with TypeScript and Vite, providing a modern and responsive experience.
+The client application is the user-facing interface for the React-Node Starter Template. It is built using React with TypeScript and Vite, providing a modern and responsive experience.
 
 ## Architecture
 

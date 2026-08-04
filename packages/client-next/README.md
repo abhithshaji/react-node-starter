@@ -1,36 +1,161 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# React-Node Starter Template - Client-Next
 
-## Getting Started
+This is the Next.js client-side application for the React-Node Starter Template.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Introduction](#introduction)
+- [Making Next.js the Primary Client](#making-nextjs-the-primary-client)
+- [Architecture](#architecture)
+- [Project Structure](#project-structure)
+- [Environment Variables](#environment-variables)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Development](#development)
+  - [Production Build](#production-build)
+  - [Running Production Server](#running-production-server)
+- [Linting](#linting)
+- [Testing](#testing)
+
+## Introduction
+
+The client-next application is an alternative user-facing interface for the React-Node Starter Template. It is built using Next.js (App Router) with React and TypeScript, providing a modern, high-performance experience with server-side rendering (SSR) capabilities and Turbopack support.
+
+## Making Next.js the Primary Client
+
+If you want to use Next.js as your primary frontend and remove the Vite React client from the monorepo:
+
+1. Delete the `packages/client` directory.
+2. Rename the `packages/client-next` directory to `packages/client`.
+3. In `packages/client/package.json` (formerly `packages/client-next/package.json`), change `"name": "client-next"` to `"name": "client"`.
+4. Run `pnpm install` in the monorepo root.
+
+Monorepo commands like `pnpm dev:client` and `pnpm --filter client dev` will now automatically run this Next.js application.
+
+## Architecture
+
+The client application follows Next.js App Router architecture with modular feature-based organization. Key architectural aspects include:
+
+-   **Framework**: [Next.js](https://nextjs.org/) (App Router) / [React](https://react.dev/)
+-   **Language**: [TypeScript](https://www.typescriptlang.org/)
+-   **Build Tool / Bundler**: [Turbopack](https://nextjs.org/docs/app/api-reference/turbopack)
+-   **UI Components**: [Shadcn/ui](https://ui.shadcn.com/) / [Base UI](https://base-ui.com/)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+-   **State & Data Fetching**: [TanStack React Query](https://tanstack.com/query/latest)
+-   **Error Tracking**: [Sentry](https://sentry.io/) (`@sentry/nextjs`)
+-   **Icons**: [Lucide React](https://lucide.dev/)
+
+## Project Structure
+
+The `src` directory is organized as follows:
+
+```
+src/
+├── app/                  # Next.js App Router pages, layouts, and global styles
+├── components/           # Reusable UI components (including Shadcn/ui)
+│   └── ui/               # Shadcn/ui components
+├── features/             # Feature-specific modules
+├── interfaces/           # TypeScript interfaces and type definitions
+├── lib/                  # Utility functions and library configurations
+├── locales/              # i18n and localization files
+├── providers/            # Application context providers (e.g., TanStack Query)
+├── shared/               # Shared utilities, hooks, and assets
+├── store/                # Application state management
+├── utils/                # Helper utilities
+└── __tests__/            # Unit and integration tests
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The client-next application requires specific environment variables to function correctly. These should be placed in environment files such as `.env.development`, `.env.production`, or `.env.testing` in the root of the `packages/client-next` directory. A `.env.example` is provided for reference.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+# Server Side
+CLIENT_PORT="3000" # Port for Next.js server (e.g., 3000 in dev, 8080 in prod)
+SENTRY_AUTH_TOKEN="" # Used for Sentry CLI during build/deploy, keep empty if not using Sentry CLI
 
-## Learn More
+# Client Side (prefixed with NEXT_PUBLIC_ to be exposed to client-side code)
+NEXT_PUBLIC_ENV="development" # Accepts: development, testing, production
+NEXT_PUBLIC_SENTRY_DSN="" # Your Sentry DSN for error tracking in the client
+```
 
-To learn more about Next.js, take a look at the following resources:
+You can copy `.env.example` to create `.env.development`, `.env.production`, or `.env.local` files as needed.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1.  Navigate to the root of the monorepo.
+2.  Install dependencies using `pnpm`:
 
-## Deploy on Vercel
+    ```bash
+    pnpm install
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Usage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Development
+
+To run the client-next application in development mode with hot-reloading:
+
+```bash
+pnpm --filter client-next dev
+```
+
+The application will typically be accessible at `http://localhost:3000`.
+
+### Production Build
+
+To build the client-next application for production:
+
+```bash
+pnpm --filter client-next build
+```
+
+### Running Production Server
+
+To start the production Next.js server:
+
+```bash
+pnpm --filter client-next start
+```
+
+The application will typically be accessible at `http://localhost:8080`.
+
+## Linting
+
+To check for linting errors with ESLint (JavaScript/TypeScript):
+
+```bash
+pnpm --filter client-next lint:eslint-check
+```
+
+To automatically fix ESLint errors:
+
+```bash
+pnpm --filter client-next lint:eslint-fix
+```
+
+To check for linting errors with Stylelint (CSS):
+
+```bash
+pnpm --filter client-next lint:stylelint-check
+```
+
+To automatically fix Stylelint errors:
+
+```bash
+pnpm --filter client-next lint:stylelint-fix
+```
+
+## Testing
+
+To run unit tests with Vitest:
+
+```bash
+pnpm --filter client-next test:unit
+```
+
+To run unit tests and generate a coverage report:
+
+```bash
+pnpm --filter client-next test:coverage
+```
