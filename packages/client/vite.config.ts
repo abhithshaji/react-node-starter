@@ -18,7 +18,7 @@ const validateEnv = (mode: TMode, env: AppEnv) => {
     "CLIENT_PORT",
     "VITE_ENV",
     "VITE_SENTRY_DSN",
-    "SENTRY_AUTH_TOKEN",
+    "SENTRY_AUTH_TOKEN"
   ];
 
   for (const key of requiredVars) {
@@ -31,7 +31,7 @@ const validateEnv = (mode: TMode, env: AppEnv) => {
 
     if (!env[key]) {
       throw new Error(
-        `${key} is missing! Please define it in your .env.${mode}`,
+        `${key} is missing! Please define it in your .env.${mode}`
       );
     }
   }
@@ -58,7 +58,7 @@ export default defineConfig(({ mode }) => {
 
   const config: ServerOptions = {
     port,
-    open: true,
+    open: true
   };
 
   return {
@@ -68,12 +68,12 @@ export default defineConfig(({ mode }) => {
       env.VITE_ENV === "production" &&
         sentryVitePlugin({
           org: "convergence-2i",
-          project: "vite-node-starter-client",
+          project: "react-node-starter-client",
           authToken: env.SENTRY_AUTH_TOKEN,
           sourcemaps: {
-            filesToDeleteAfterUpload: "dist/assets/**/*.map",
-          },
-        }),
+            filesToDeleteAfterUpload: "dist/assets/**/*.map"
+          }
+        })
     ],
     test: {
       globals: true,
@@ -88,22 +88,22 @@ export default defineConfig(({ mode }) => {
           "dist",
           "build",
           "src/__tests__/setupTests.ts",
-          "src/**/*.{test,spec}.{ts,tsx}",
+          "src/**/*.{test,spec}.{ts,tsx}"
         ],
         thresholds: {
           statements: 80,
           branches: 80,
           functions: 80,
-          lines: 80,
-        },
-      },
+          lines: 80
+        }
+      }
     },
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
         "@features": path.resolve(__dirname, "./src/features"),
-        "@shared": path.resolve(__dirname, "./src/shared"),
-      },
+        "@shared": path.resolve(__dirname, "./src/shared")
+      }
     },
     server: config,
     preview: config,
@@ -111,8 +111,8 @@ export default defineConfig(({ mode }) => {
       minify: true,
       sourcemap: env.VITE_ENV === "production",
       rollupOptions: {
-        external: [/.*\.(test|spec)\.(ts|tsx)$/],
-      },
-    },
+        external: [/.*\.(test|spec)\.(ts|tsx)$/]
+      }
+    }
   };
 });
