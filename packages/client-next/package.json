@@ -7,9 +7,9 @@
     "lint:eslint-fix": "eslint --fix",
     "lint:stylelint-check": "stylelint **/*.css",
     "lint:stylelint-fix": "stylelint **/*.css --fix",
-    "dev": "next dev --turbopack",
+    "dev": "dotenv -e .env.development -- sh -c 'next dev -p $CLIENT_PORT --turbopack'",
     "build": "next build --turbopack",
-    "start": "next start"
+    "start": "dotenv -e .env.production -- sh -c 'next start -p $CLIENT_PORT'"
   },
   "dependencies": {
     "next": "15.5.22",
@@ -22,6 +22,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv-cli": "^11.0.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.22",
     "stylelint": "^17.14.0",
