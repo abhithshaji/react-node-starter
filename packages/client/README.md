@@ -1,4 +1,4 @@
-# Vite-Node Starter Template - Client
+# Vite-Node Starter Template - Client-Vite
 
 This is the client-side application for the Vite-Node Starter Template.
 
