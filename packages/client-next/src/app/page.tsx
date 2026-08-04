@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div>
-      <h1>Next-Node Starter Template</h1>
+      <h1>React-Node Starter Template</h1>
     </div>
   );
 }
