@@ -111,7 +111,8 @@ export default defineConfig(({ mode }) => {
       minify: true,
       sourcemap: env.VITE_ENV === "production",
       rollupOptions: {
-        external: [/.*\.(test|spec)\.(ts|tsx)$/]
+        external: [/.*\.(test|spec)\.(ts|tsx)$/],
+        treeShake:true
       }
     }
   };
