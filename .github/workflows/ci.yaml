@@ -1,4 +1,4 @@
-name: Vite_Node_Starter CI
+name: React_Node_Starter CI
 
 on:
   push:
