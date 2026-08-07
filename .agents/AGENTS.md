@@ -41,14 +41,17 @@
 ### Client Options (`packages/client` / `packages/client-next`)
 
 The repository supports two frontend options:
+
 - **Vite React SPA (`packages/client`)**: Built with React 19, Vite, React Router, Tailwind CSS, and Shadcn UI.
 - **Next.js App Router (`packages/client-next` or `packages/client`)**: Built with React 19, Next.js 15 (App Router), Turbopack, Tailwind CSS, Shadcn UI, Base UI, and TanStack React Query.
 
 #### Client Selection & Cleanup Guidance
+
 - **Using Vite React SPA:** Delete the `packages/client-next` directory if not needed.
 - **Using Next.js:** Delete `packages/client`, rename `packages/client-next` to `packages/client`, and update `"name": "client-next"` to `"name": "client"` in `packages/client/package.json` (followed by `pnpm install`).
 
 #### Client Code Conventions
+
 - **Separation of Concerns:**
   - Keep presentational UI components lightweight and focused on layout/styling.
   - Extract all stateful logic, side effects, and data fetching into custom hooks or providers.
