@@ -1,8 +1,15 @@
+import { Routes, Route } from "react-router";
+
 function App() {
   return (
-    <div>
-      <h1>Vite-Node Starter Template</h1>
-    </div>
+    <main>
+      <Routes>
+        <Route
+          path="/"
+          element={<h1>Vite-Node Starter Template</h1>}
+        />
+      </Routes>
+    </main>
   );
 }
 
