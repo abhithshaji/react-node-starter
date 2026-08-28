@@ -112,7 +112,7 @@ export default defineConfig(({ mode }) => {
       sourcemap: env.VITE_ENV === "production",
       rollupOptions: {
         external: [/.*\.(test|spec)\.(ts|tsx)$/],
-        treeShake: true
+        treeshake: true
       }
     }
   };
