@@ -6,7 +6,7 @@
   "scripts": {
     "lint:eslint-check": "eslint",
     "lint:eslint-fix": "eslint --fix",
-    "prisma:generate": "pnpm dlx prisma generate",
+    "prisma:generate": "npx prisma generate",
     "dist": "pnpm exec tsc && pnpm exec tsc-alias",
     "dev": "cross-env NODE_ENV=development nodemon src/server.ts",
     "start": "cross-env NODE_ENV=production node dist/src/server.js"
