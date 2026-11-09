@@ -78,6 +78,10 @@ All monorepo scripts targeting `client` (e.g. `pnpm dev:client`) will automatica
     ```bash
     pnpm --filter server prisma:generate
     ```
+4. Install agent skills (optional):
+    ```sh
+    npx skills experimental_install
+    ```
 
 ## Environment Variables
 
