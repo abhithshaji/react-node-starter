@@ -7,6 +7,12 @@
       "skillPath": "skills/taste-skill/SKILL.md",
       "computedHash": "6d838b246d0e35d0b53f4f23f98ba7a1dd561937e64f7d0c7553b0928e376c3e"
     },
+    "frontend-system-design": {
+      "source": "abhithshaji/frontend-skills",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-system-design/SKILL.md",
+      "computedHash": "0189f88e8f5bb7fd7c6f3afbf5d2080ff4055163f47a0796ec57eb6b7e2758e7"
+    },
     "react-design-patterns": {
       "source": "abhithshaji/frontend-skills",
       "sourceType": "github",
